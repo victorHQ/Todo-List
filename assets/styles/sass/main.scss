@@ -1,0 +1,113 @@
+@import './variablesAndMixins.scss';
+
+/* === Reset Global === */
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, button, div, input, span {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY ======================== */
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, $color-purple, $color-pink);
+    transition: all .2s cubic-bezier(.5,.1,.75,1.35);
+
+    &::-webkit-scrollbar{
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $color-pink;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-purple;
+    }
+}
+
+/* MAIN ======================== */
+.container{
+    width: 30%;
+    min-width: 450px;
+    margin: 20px auto;
+    padding: 20px;
+
+    h1{
+        color: white;
+        font-size: 5rem;
+        text-align: center;
+        opacity: 0.4;
+        margin: 10%;
+    }
+}
+
+#newtask{
+    position: relative;
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 5px;
+    @include box-shadow;
+
+    input {
+        width: 70%;
+        height: 45px;
+        font-size: 15px;
+        border: 2px solid $color-light-gray;
+        padding: 12px;
+        color: #111111;
+        font-weight: 500;
+        position: relative;
+        border-radius: 5px;
+
+        &:focus{
+            outline: none;
+            border-color: $color-purple;
+        }
+    }
+}
+
+#tasks{
+    background-color: white;
+    padding: 30px 20px;
+    margin-top: 60px;
+    border-radius: 10px;
+    @include box-shadow;
+    width: 100%;
+    position: relative;
+
+    .task{
+        background-color: white;
+        height: 50px;
+        padding: 5px 10px;
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid $color-light-gray;
+        cursor: pointer;
+    
+        &:hover{
+            @include transition;
+            background: #d485f3;
+            border-radius: 5px;
+        }
+    
+        span{
+            font-size: 15px;
+            font-weight: 400;
+        }
+    }
+}
+
+
+
+
+

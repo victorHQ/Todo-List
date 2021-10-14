@@ -1,0 +1,113 @@
+@import './variablesAndMixins.scss';
+
+/*======== Toggle Button ========*/
+#dark-mode{
+    float: right;
+    margin: 10px 10%;
+
+    input[type="checkbox"]{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -webkit-tap-highlight-color: transparent;
+        appearance: none;
+        cursor: pointer;
+        margin-left: 5px;
+    
+        &:focus{
+            outline: 0
+        }
+    }
+}
+
+.toggle{
+    height: 32px;
+    width: 52px;
+    border-radius: 16px;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    border: 2px solid #474755;
+    background: linear-gradient(180deg, #6bb9ed 0%, #eba356 74%);
+    @include transition;
+
+    &:after{
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: rgb(233, 253, 102);
+        box-shadow: 0 1px 2px rgba(44,44,44,.2);
+        transition: all .2s cubic-bezier(.5,.1,.75,1.35);
+    }
+
+    &:checked{
+        border-color: #654FEC;
+        background: linear-gradient(180deg, #000831 0%, #0093d6 100%);
+
+        &:after{
+            transform: translatex(20px);
+            background: linear-gradient(180deg, #637081 0%, #7c98b3 74%);
+        }
+    }
+}
+
+/*======== Dark ========*/
+.dark-mode{
+    background-color: $color-heavy-purple !important;
+    background-image: linear-gradient(315deg, $color-heavy-purple 0%, $color-navy-blue 74%) !important;
+
+    &::-webkit-scrollbar-track {
+        background: $color-navy-blue !important;
+    }
+
+    #newtask{
+        background-color: $color-transparent-black !important;
+
+        input{
+            color: white !important;
+            background-color: $color-black !important;
+            border: 2px solid #ffffff54;
+
+            &:focus{
+                border: 2px solid $color-navy-purple !important;
+            }
+        }
+
+        .add-btn{
+            border: 3px solid $color-navy-purple !important;
+            background-color: $color-black !important;
+            color: $color-navy-purple;
+
+            &:hover {
+                background: $color-navy-purple !important;
+                color: white;
+            }
+        }
+    }
+
+    #tasks{
+        background-color: $color-transparent-black !important;
+
+        .task{
+            background-color: transparent !important;
+            color: white !important;
+            border-bottom: 2px solid #ffffff54 !important;
+
+            &:hover{
+                background-color: $color-navy-blue !important;
+            }
+
+            button{
+                background: $color-navy-purple !important;
+            }
+        }
+    }
+}
+
+/*======== Task Completed ========*/
+.completed {
+    text-decoration: line-through;
+}

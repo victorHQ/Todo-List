@@ -1,0 +1,107 @@
+/* === Reset Global === */
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, button, div, input, span {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BODY ======================== */
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #8052ec, #d161ff);
+  transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #d161ff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8052ec;
+}
+
+/* MAIN ======================== */
+.container {
+  width: 30%;
+  min-width: 450px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.container h1 {
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+  opacity: 0.4;
+  margin: 10%;
+}
+
+#newtask {
+  position: relative;
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 5px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+#newtask input {
+  width: 70%;
+  height: 45px;
+  font-size: 15px;
+  border: 2px solid #d1d3d4;
+  padding: 12px;
+  color: #111111;
+  font-weight: 500;
+  position: relative;
+  border-radius: 5px;
+}
+
+#newtask input:focus {
+  outline: none;
+  border-color: #8052ec;
+}
+
+#tasks {
+  background-color: white;
+  padding: 30px 20px;
+  margin-top: 60px;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  position: relative;
+}
+
+#tasks .task {
+  background-color: white;
+  height: 50px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #d1d3d4;
+  cursor: pointer;
+}
+
+#tasks .task:hover {
+  transition: all 0.3s ease;
+  background: #d485f3;
+  border-radius: 5px;
+}
+
+#tasks .task span {
+  font-size: 15px;
+  font-weight: 400;
+}
+/*# sourceMappingURL=main.css.map */

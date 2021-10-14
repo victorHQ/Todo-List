@@ -1,0 +1,20 @@
+//colors
+$color-purple: #8052ec;
+$color-pink: #d161ff;
+$color-light-gray: #d1d3d4;
+
+//Dark mode
+$color-heavy-purple: #7f5a83;
+$color-navy-purple: #5535a0;
+$color-navy-blue: #0d324d;
+$color-transparent-black: #181a1bb3;
+$color-black: #232020;
+
+//mixins
+@mixin box-shadow{
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+@mixin transition {
+    transition: all 0.3s ease;
+}

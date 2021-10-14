@@ -1,0 +1,35 @@
+@import './variablesAndMixins.scss';
+
+/* ADD BUTTON ======================== */
+.add-btn {
+    position: relative;
+    margin-left: 6%;
+    width: 22%;
+    height: 45px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 3px solid $color-purple;
+    color: $color-purple;
+
+    @include transition;
+
+    &:hover {
+        background: $color-purple;
+        color: white;
+    }
+}
+
+/* DELETE BUTTON ======================== */
+.task{
+    button{
+        background-color: $color-purple;
+        color: white;
+        height: 100%;
+        width: 40px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+    }
+}

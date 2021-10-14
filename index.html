@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-List | Lista de Tarefas</title>
+    <!--Icon-->
+    <link rel="icon" href="./assets/styles/img/List.png">
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <!--Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="/assets/styles/css/main.css">
+    <link rel="stylesheet" href="/assets/styles/css/utils.css">
+    <link rel="stylesheet" href="/assets/styles/css/button.css">
+</head>
+<body>
+    <main>
+        <label id="dark-mode"> 
+            <input type="checkbox" class="toggle">
+        </label>
+        
+        <div class="container">
+            <h1>Lista de Tarefas</h1>
+            <div id="newtask">
+                <input type="text" maxlength="30" placeholder="Tarefa a ser realizada...">
+                <button class="add-btn" id="push">Adicionar</button>
+            </div>
+            <div id="tasks"></div>
+        </div>
+    </main>
+    <!--Script-->
+    <script src="/assets/js/app.js" type="module"></script>
+</body>
+</html>
