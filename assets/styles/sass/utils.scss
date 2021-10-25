@@ -90,6 +90,21 @@
 
     #tasks{
         background-color: $color-transparent-black !important;
+        
+        #count-tasks{
+            color: white;
+
+            .delete-all-tasks{
+                border: 3px solid $color-navy-purple !important;
+                background-color: $color-black !important;
+                color: $color-navy-purple;
+    
+                &:hover {
+                    background: $color-navy-purple !important;
+                    color: white;
+                }
+            }
+        }
 
         .task{
             background-color: transparent !important;

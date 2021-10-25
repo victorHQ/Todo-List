@@ -91,6 +91,21 @@
   background-color: #181a1bb3 !important;
 }
 
+.dark-mode #tasks #count-tasks {
+  color: white;
+}
+
+.dark-mode #tasks #count-tasks .delete-all-tasks {
+  border: 3px solid #5535a0 !important;
+  background-color: #232020 !important;
+  color: #5535a0;
+}
+
+.dark-mode #tasks #count-tasks .delete-all-tasks:hover {
+  background: #5535a0 !important;
+  color: white;
+}
+
 .dark-mode #tasks .task {
   background-color: transparent !important;
   color: white !important;

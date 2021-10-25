@@ -21,4 +21,11 @@ export default class Utils {
             })
         }
     }
+
+    countTasks(){
+        let tasks = document.querySelectorAll('.task');
+
+        const taskNumber = document.querySelector('#count');
+        taskNumber.textContent = tasks.length;
+    }
 }

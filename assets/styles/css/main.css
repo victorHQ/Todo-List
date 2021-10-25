@@ -82,6 +82,14 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 
+#tasks #count-tasks {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
 #tasks .task {
   background-color: white;
   height: 50px;

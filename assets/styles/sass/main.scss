@@ -83,6 +83,15 @@ body {
     width: 100%;
     position: relative;
 
+    #count-tasks{
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
     .task{
         background-color: white;
         height: 50px;

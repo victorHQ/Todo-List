@@ -4,8 +4,8 @@ import Utils from "./utils.js";
 class App{
     initTodoList(){
         utils.darkMode();
-        utils.completedTasks();
         main.submitTask();
+        main.deleteAllTasks();
         main.deleteTask();
         main.addSavedTasks();
     }

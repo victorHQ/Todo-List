@@ -6,14 +6,12 @@ export default class Main{
         btnTask.addEventListener('click', () => {
             this.inputVerify();
             this.clearInput();
-            utils.completedTasks();
         });
         
         inputTask.addEventListener('keypress', event => {
             if(event.keyCode === 13) {
                 this.inputVerify();
                 this.clearInput();
-                utils.completedTasks();
             }
         });
     }
@@ -21,8 +19,6 @@ export default class Main{
     inputVerify(){
         if(this.isEmpty(inputTask.value) || inputTask.value.length > MAX_TEXT) return;
             this.createTask(inputTask.value);
-        
-        utils.completedTasks();
     }
 
     isEmpty(str) {
@@ -41,33 +37,52 @@ export default class Main{
         
             if(element.classList.contains('delete')){
                 element.closest("#tasks > .task").remove();
-                this.saveTasks();    
             } 
+            this.saveTasks();    
         }); 
+    }
+
+    deleteAllTasks(){
+        document.addEventListener('click', event => {
+            const element = event.target;
+
+            if(element.classList.contains('delete-all-tasks')){
+                let tasks = document.querySelectorAll('.task');
+
+                for (let i = 0; i < tasks.length; i++) {
+                    tasks[i].remove();
+                }
+            }
+            this.saveTasks();
+        })
     }
 
     createTask(inputTask){
         tasks.innerHTML += ` 
-            <div class="task"> 
-                <span class="taskname">
-                    ${inputTask}
-                </span>
-                <button class="delete"> 
-                    <i class="fas fa-trash delete"></i>
-                </button>
-            </div> 
-        `;
-        this.saveTasks();
+        <div class="task"> 
+            <span class="taskname">
+                ${inputTask}
+            </span>
+            <button class="delete"> 
+                <i class="fas fa-trash delete"></i>
+            </button>
+        </div> 
+    `;
+    this.saveTasks(); 
     }
 
     //=================================== Local Storage Tasks ===================================
     saveTasks() {
+
+        utils.countTasks();
+
         const divTasks = tasks.querySelectorAll('.taskname');
         const buttonErase = tasks.querySelectorAll('.delete');
         const listOfTasks = [];
-    
+        let taskText;
+
         for (let task of divTasks){
-            let taskText = task.innerText;
+            taskText = task.innerText;
             buttonErase.innerHTML = ''.trim();
             listOfTasks.push(taskText);
         }
@@ -77,7 +92,10 @@ export default class Main{
     }
     
     addSavedTasks() {
-        const tasks = localStorage.getItem('tasks');
+
+        utils.countTasks();
+
+        let tasks = localStorage.getItem('tasks');
         const listOfTasks = JSON.parse(tasks);
     
         for(let task of listOfTasks){
@@ -95,3 +113,4 @@ const tasks = document.querySelector('#tasks');
 const MAX_TEXT = 30;
 
 const utils = new Utils();
+
